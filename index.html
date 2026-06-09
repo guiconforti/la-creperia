@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>La Creperia · Live French Crêpes at Your Event — Boca Raton, FL</title>
+<meta name="description" content="A live French crêpe buffet made fresh in front of your guests. Sweet and savory, fresh ingredients. We serve parties and events in Boca Raton and across South Florida." />
+<meta property="og:title" content="La Creperia · Share moments, share flavor" />
+<meta property="og:description" content="A live French crêpe station for your event. Boca Raton, FL." />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="en_US" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Schibsted+Grotesk:ital,wght@0,400..700;1,400..600&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FoodEstablishment",
+  "name": "La Creperia",
+  "description": "Buffet de crepe francês feito na hora para festas e eventos. Estação de crepe ao vivo, doce e salgado.",
+  "servesCuisine": ["French", "Crepes", "Catering"],
+  "image": "assets/hf_20260608_193756_770a13b8-a204-4ac0-898c-04acf984e40a.webp",
+  "telephone": "+1-754-326-9853",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Boca Raton",
+    "addressRegion": "FL",
+    "addressCountry": "US"
+  },
+  "areaServed": "South Florida",
+  "priceRange": "$$",
+  "sameAs": ["https://www.instagram.com/la_creperia_usa/"]
+}
+</script>
+
+<style>
+/* ============ TOKENS ============ */
+:root{
+  --green:#1c5b41;
+  --green-deep:#0f3a29;
+  --green-darker:#0a2a1d;
+  --green-soft:#2a6e4f;
+  --cream:#f6efe0;
+  --cream-2:#efe4cf;
+  --paper-text:#28291f;
+  --ink:#161a14;
+  --gold:#e6b13c;
+  --gold-deep:#bd8722;
+  --caramel:#9c6535;
+  --strawberry:#c4493a;
+  --line:rgba(40,41,31,.16);
+
+  --ff-display:"Fraunces", Georgia, serif;
+  --ff-body:"Schibsted Grotesk", system-ui, sans-serif;
+  --ff-hand:"Caveat", cursive;
+
+  --maxw:1280px;
+  --gut:clamp(20px,5vw,72px);
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--ff-body);
+  background:var(--cream);
+  color:var(--paper-text);
+  font-size:clamp(16px,1.05vw,18px);
+  line-height:1.62;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  font-feature-settings:"kern" 1,"liga" 1,"calt" 1;
+}
+img,video{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+
+/* grain + paper texture overlay */
+body::before{
+  content:"";position:fixed;inset:0;z-index:9999;pointer-events:none;
+  opacity:.05;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ============ TYPE ============ */
+h1,h2,h3,h4{
+  font-family:var(--ff-display);
+  font-optical-sizing:auto;
+  font-weight:430;
+  line-height:1.0;
+  letter-spacing:-.018em;
+  color:var(--ink);
+  text-wrap:balance;
+}
+p{text-wrap:pretty}
+.serif-it{font-style:italic;font-weight:400}
+.hand{font-family:var(--ff-hand);font-weight:600;letter-spacing:0}
+
+.eyebrow{
+  font-family:var(--ff-body);
+  font-size:.72rem;
+  font-weight:600;
+  text-transform:uppercase;
+  letter-spacing:.28em;
+  color:var(--gold-deep);
+  display:inline-flex;align-items:center;gap:.7em;
+}
+.eyebrow::before{content:"";width:26px;height:1px;background:currentColor;opacity:.8}
+.on-dark .eyebrow{color:var(--gold)}
+
+/* dotted leader — echoes the logo's dotted underline */
+.dots{
+  height:8px;width:120px;
+  background-image:radial-gradient(currentColor 1.4px,transparent 1.6px);
+  background-size:11px 8px;background-position:0 center;background-repeat:repeat-x;
+  color:var(--gold);opacity:.9;
+}
+
+/* ============ LAYOUT ============ */
+.wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gut)}
+section{position:relative}
+.pad{padding-block:clamp(72px,10vw,150px)}
+
+/* ============ BUTTONS ============ */
+.btn{
+  --bg:var(--green);--fg:var(--cream);
+  font-family:var(--ff-body);font-weight:600;font-size:.95rem;letter-spacing:.01em;
+  display:inline-flex;align-items:center;gap:.65em;
+  padding:.95em 1.5em;border-radius:999px;
+  background:var(--bg);color:var(--fg);
+  position:relative;overflow:hidden;isolation:isolate;
+  transition:transform .4s var(--ease),box-shadow .4s var(--ease);
+  border:1px solid transparent;cursor:pointer;
+}
+.btn .arr{transition:transform .4s var(--ease)}
+.btn::after{
+  content:"";position:absolute;inset:0;z-index:-1;
+  background:var(--gold);transform:translateY(101%);
+  transition:transform .45s var(--ease);
+}
+.btn:hover{transform:translateY(-2px);box-shadow:0 14px 30px -12px rgba(15,58,41,.5)}
+.btn:hover{color:var(--green-darker)}
+.btn:hover::after{transform:translateY(0)}
+.btn:hover .arr{transform:translate(4px,-4px)}
+.btn--gold{--bg:var(--gold);--fg:var(--green-darker)}
+.btn--gold::after{background:var(--cream)}
+.btn--ghost{--bg:transparent;--fg:var(--cream);border-color:rgba(246,239,224,.4)}
+.btn--ghost::after{background:var(--cream)}
+.btn--ghost:hover{color:var(--green-darker)}
+
+/* ============ NAV ============ */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  transition:background .5s var(--ease),box-shadow .5s var(--ease),padding .5s var(--ease);
+  padding-block:22px;
+}
+header.solid{
+  background:rgba(15,58,41,.92);
+  backdrop-filter:saturate(1.4) blur(10px);
+  padding-block:13px;
+  box-shadow:0 1px 0 rgba(230,177,60,.18);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{
+  font-family:var(--ff-hand);font-size:1.85rem;font-weight:700;
+  color:var(--cream);line-height:1;letter-spacing:-.01em;
+  display:flex;align-items:baseline;gap:.06em;
+}
+.brand b{font-weight:700}
+.brand .la{font-size:.78em;transform:translateY(-.05em);opacity:.92}
+.navlinks{display:flex;align-items:center;gap:30px}
+.navlinks a{
+  font-size:.9rem;font-weight:500;color:rgba(246,239,224,.86);
+  position:relative;padding-block:4px;
+}
+.navlinks a::after{
+  content:"";position:absolute;left:0;right:100%;bottom:0;height:1.5px;
+  background:var(--gold);transition:right .4s var(--ease);
+}
+.navlinks a:hover{color:var(--cream)}
+.navlinks a:hover::after{right:0}
+.nav .btn{padding:.62em 1.15em;font-size:.86rem}
+.burger{display:none;background:none;border:0;cursor:pointer;flex-direction:column;gap:5px;padding:8px}
+.burger span{width:24px;height:2px;background:var(--cream);transition:.3s}
+
+/* ============ HERO ============ */
+.hero{
+  min-height:100svh;position:relative;display:flex;align-items:flex-end;
+  background:var(--green-darker);overflow:hidden;
+}
+.hero video,.hero .poster{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  filter:saturate(1.02) contrast(1.02);
+}
+.hero .veil{
+  position:absolute;inset:0;
+  background:
+    linear-gradient(180deg,rgba(10,42,29,.55) 0%,rgba(10,42,29,0) 26%,rgba(10,42,29,.15) 55%,rgba(10,42,29,.86) 100%),
+    linear-gradient(95deg,rgba(10,42,29,.72) 0%,rgba(10,42,29,.12) 52%,rgba(10,42,29,0) 78%);
+}
+.hero .wrap{position:relative;z-index:3;width:100%;padding-bottom:clamp(48px,8vh,92px);padding-top:140px}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:40px}
+.hero-eye{margin-bottom:26px}
+.hero h1{
+  color:var(--cream);
+  font-size:clamp(3rem,9.2vw,8.2rem);
+  font-weight:380;line-height:.92;letter-spacing:-.025em;
+  max-width:14ch;
+}
+.hero h1 .serif-it{color:var(--gold)}
+.hero-sub{
+  margin-top:24px;max-width:40ch;color:rgba(246,239,224,.9);
+  font-size:clamp(1.05rem,1.7vw,1.35rem);line-height:1.45;
+}
+.hero-cta{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.hero-side{
+  writing-mode:vertical-rl;transform:rotate(180deg);
+  font-family:var(--ff-body);font-size:.74rem;font-weight:600;
+  text-transform:uppercase;letter-spacing:.32em;color:rgba(246,239,224,.62);
+  display:flex;align-items:center;gap:18px;
+}
+.hero-side .dots{writing-mode:horizontal-tb;transform:rotate(90deg);width:60px;color:var(--gold)}
+.scrollcue{
+  position:absolute;left:var(--gut);bottom:26px;z-index:3;
+  font-size:.7rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(246,239,224,.6);
+  display:flex;align-items:center;gap:10px;
+}
+.scrollcue .dot{width:6px;height:6px;border-radius:50%;background:var(--gold);animation:pulse 2s var(--ease) infinite}
+@keyframes pulse{0%,100%{opacity:.3;transform:scale(.7)}50%{opacity:1;transform:scale(1.3)}}
+
+/* hero load animation */
+.reveal-up{opacity:0;transform:translateY(26px);animation:revealUp 1s var(--ease) forwards}
+@keyframes revealUp{to{opacity:1;transform:none}}
+
+/* ============ MARQUEE ============ */
+.marquee{
+  background:var(--gold);color:var(--green-darker);
+  border-top:1.5px solid var(--green-darker);border-bottom:1.5px solid var(--green-darker);
+  overflow:hidden;white-space:nowrap;padding-block:15px;
+}
+.marquee-track{display:inline-flex;gap:0;animation:scroll 34s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.marquee span{
+  font-family:var(--ff-display);font-style:italic;font-size:1.35rem;font-weight:430;
+  padding-inline:1.4ch;display:inline-flex;align-items:center;gap:1.4ch;
+}
+.marquee span::after{content:"✦";font-style:normal;font-size:.7em;color:var(--green)}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* ============ INTRO / MANIFESTO ============ */
+.intro{background:var(--cream)}
+.intro-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(36px,6vw,90px);align-items:center}
+.intro h2{font-size:clamp(2.1rem,4.6vw,3.9rem);line-height:1.0;max-width:16ch}
+.intro h2 .serif-it{color:var(--green)}
+.lead{margin-top:30px;max-width:54ch;font-size:1.13rem;color:#43442f}
+.lead .dropcap::first-letter{
+  font-family:var(--ff-display);font-size:3.7em;line-height:.72;float:left;
+  padding:.05em .12em 0 0;color:var(--green);font-weight:430;
+}
+.intro-sign{margin-top:26px;font-family:var(--ff-hand);font-size:1.7rem;color:var(--caramel);transform:rotate(-2deg)}
+.intro-fig{position:relative}
+.intro-fig img{
+  width:100%;aspect-ratio:3/4;object-fit:cover;
+  border-radius:230px 230px 18px 18px;
+  box-shadow:0 40px 70px -34px rgba(15,58,41,.55);
+}
+.intro-fig .tag{
+  position:absolute;left:-26px;bottom:40px;
+  background:var(--green);color:var(--cream);
+  font-family:var(--ff-hand);font-size:1.5rem;
+  padding:.35em 1em;border-radius:999px;transform:rotate(-4deg);
+  box-shadow:0 16px 30px -16px rgba(15,58,41,.6);
+}
+
+/* ============ PILLARS ============ */
+.pillars{background:var(--green-deep);color:var(--cream)}
+.pillars .head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-bottom:60px}
+.pillars h2{color:var(--cream);font-size:clamp(2rem,4.4vw,3.5rem);max-width:14ch}
+.pillars h2 .serif-it{color:var(--gold)}
+.pillar{
+  display:grid;grid-template-columns:90px 1fr minmax(0,38%);
+  gap:clamp(20px,4vw,56px);align-items:center;
+  padding-block:clamp(34px,5vw,52px);
+  border-top:1px solid rgba(246,239,224,.16);
+}
+.pillar:last-child{border-bottom:1px solid rgba(246,239,224,.16)}
+.pillar .num{
+  font-family:var(--ff-display);font-size:clamp(2.4rem,5vw,3.6rem);
+  color:transparent;-webkit-text-stroke:1.3px var(--gold);font-style:italic;font-weight:430;
+}
+.pillar .ptxt h3{color:var(--cream);font-size:clamp(1.5rem,2.7vw,2.05rem);margin-bottom:.4em}
+.pillar .ptxt p{color:rgba(246,239,224,.82);max-width:46ch}
+.pillar figure{overflow:hidden;border-radius:14px;align-self:stretch}
+.pillar figure img{width:100%;height:100%;min-height:170px;object-fit:cover;transition:transform .9s var(--ease)}
+.pillar:hover figure img{transform:scale(1.06)}
+.pillar:nth-child(even){grid-template-columns:minmax(0,38%) 1fr 90px}
+.pillar:nth-child(even) figure{order:-1}
+.pillar:nth-child(even) .num{order:3;text-align:right}
+
+/* ============ SABORES ============ */
+.sabores{background:var(--cream-2)}
+.sabores .head{text-align:center;margin-bottom:56px;display:flex;flex-direction:column;align-items:center;gap:18px}
+.sabores h2{font-size:clamp(2.2rem,5vw,4rem)}
+.sabores h2 .serif-it{color:var(--strawberry)}
+.menu-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(22px,3vw,40px)}
+.menu-card{
+  background:var(--cream);border-radius:18px;overflow:hidden;
+  box-shadow:0 30px 60px -40px rgba(15,58,41,.4);
+  border:1px solid rgba(40,41,31,.07);
+  display:flex;flex-direction:column;
+}
+.menu-card .pic{position:relative;aspect-ratio:16/10;overflow:hidden}
+.menu-card .pic img{width:100%;height:100%;object-fit:cover;transition:transform 1s var(--ease)}
+.menu-card:hover .pic img{transform:scale(1.07)}
+.menu-card .label{
+  position:absolute;top:16px;left:16px;
+  background:var(--green);color:var(--cream);
+  font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.2em;
+  padding:.5em 1em;border-radius:999px;
+}
+.menu-card.doce .label{background:var(--strawberry)}
+.menu-body{padding:clamp(22px,3vw,34px)}
+.menu-body h3{font-size:clamp(1.5rem,2.6vw,2rem);margin-bottom:.5em}
+.menu-list{list-style:none;display:flex;flex-direction:column}
+.menu-list li{
+  display:flex;align-items:baseline;gap:.8ch;
+  padding-block:.6em;border-bottom:1px dotted var(--line);
+}
+.menu-list li:last-child{border-bottom:0}
+.menu-list b{font-weight:600;color:var(--ink);white-space:nowrap}
+.menu-list .leader{flex:1;border-bottom:1px dotted var(--line);transform:translateY(-3px);margin-inline:.3ch}
+.menu-list .desc{color:#6a6a52;font-size:.92rem}
+.menu-note{margin-top:38px;text-align:center;color:#5d5d46;font-style:italic;font-family:var(--ff-display);font-size:1.12rem}
+
+/* ============ COMO FUNCIONA ============ */
+.how{background:var(--green);color:var(--cream);overflow:hidden}
+.how .head{margin-bottom:54px;max-width:30ch}
+.how h2{color:var(--cream);font-size:clamp(2rem,4.4vw,3.4rem)}
+.how h2 .serif-it{color:var(--gold)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(20px,2.6vw,38px);counter-reset:s}
+.step{position:relative;padding-top:30px}
+.step::before{
+  counter-increment:s;content:"0" counter(s);
+  font-family:var(--ff-display);font-style:italic;font-size:1.1rem;color:var(--gold);
+  position:absolute;top:0;left:0;
+}
+.step .bar{height:2px;background:rgba(246,239,224,.22);margin-bottom:22px;position:relative;overflow:hidden}
+.step .bar::after{content:"";position:absolute;inset:0;background:var(--gold);transform:translateX(-101%);transition:transform .9s var(--ease)}
+.step.in .bar::after{transform:none}
+.step h4{color:var(--cream);font-size:1.25rem;margin-bottom:.5em}
+.step p{color:rgba(246,239,224,.78);font-size:.97rem}
+
+/* ============ EVENTOS ============ */
+.events{position:relative;background:var(--green-darker);color:var(--cream);overflow:hidden}
+.events .bg{position:absolute;inset:0;opacity:.32}
+.events .bg img{width:100%;height:100%;object-fit:cover}
+.events::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,42,29,.7),rgba(10,42,29,.92))}
+.events .wrap{position:relative;z-index:2;text-align:center;display:flex;flex-direction:column;align-items:center;gap:26px}
+.events h2{color:var(--cream);font-size:clamp(2.1rem,5vw,3.8rem);max-width:18ch}
+.events h2 .serif-it{color:var(--gold)}
+.events p.sub{color:rgba(246,239,224,.85);max-width:48ch;font-size:1.1rem}
+.chips{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;max-width:760px;margin-top:6px}
+.chip{
+  border:1px solid rgba(246,239,224,.3);border-radius:999px;
+  padding:.55em 1.2em;font-size:.92rem;color:rgba(246,239,224,.92);
+  transition:.4s var(--ease);cursor:default;
+}
+.chip:hover{background:var(--gold);color:var(--green-darker);border-color:var(--gold);transform:translateY(-2px)}
+
+/* ============ DEPOIMENTO ============ */
+.proof{background:var(--cream)}
+.proof-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(36px,6vw,80px);align-items:center}
+.proof h2{font-size:clamp(1.9rem,4vw,3rem);max-width:13ch}
+.proof h2 .serif-it{color:var(--green)}
+.proof .sub{margin-top:20px;color:#55553f;max-width:38ch}
+.bubble-wrap{display:flex;flex-direction:column;gap:14px}
+.bubble{
+  background:#dcf3d4;color:#1e2a18;
+  padding:18px 22px;border-radius:20px 20px 20px 6px;
+  max-width:480px;box-shadow:0 20px 40px -28px rgba(15,58,41,.5);
+  position:relative;font-size:1.05rem;line-height:1.5;
+}
+.bubble.q{background:#fff;border-radius:20px 20px 6px 20px;align-self:flex-end;color:#34341f;font-size:.96rem;opacity:.92}
+.bubble .meta{display:block;margin-top:10px;font-size:.78rem;color:#5f7a52;font-weight:600}
+.bubble .check{color:#2a9d4a;font-size:.7em;margin-left:.4ch}
+.proof .src{margin-top:22px;display:flex;align-items:center;gap:12px;color:#6a6a52;font-size:.88rem}
+.proof .src .dots{width:80px;color:var(--gold-deep)}
+
+/* ============ QUEM SOMOS ============ */
+.about{background:var(--cream-2)}
+.about-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(36px,6vw,80px);align-items:center}
+.about figure{position:relative}
+.about figure img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:18px;box-shadow:0 36px 64px -38px rgba(15,58,41,.5)}
+.about figure figcaption{
+  position:absolute;right:-14px;bottom:-14px;background:var(--gold);color:var(--green-darker);
+  font-family:var(--ff-hand);font-size:1.5rem;padding:.3em 1em;border-radius:14px;transform:rotate(2deg);
+}
+.about h2{font-size:clamp(2rem,4.2vw,3.2rem);max-width:16ch}
+.about h2 .serif-it{color:var(--green)}
+.about p{margin-top:22px;max-width:50ch;color:#43442f;font-size:1.08rem}
+.about .who{margin-top:26px;font-family:var(--ff-hand);font-size:1.7rem;color:var(--caramel)}
+
+/* ============ CTA / CONTATO ============ */
+.cta{background:var(--green-deep);color:var(--cream);text-align:center;overflow:hidden;position:relative}
+.cta .glow{position:absolute;width:60vw;height:60vw;border-radius:50%;background:radial-gradient(circle,rgba(230,177,60,.18),transparent 65%);top:-25vw;left:50%;transform:translateX(-50%);pointer-events:none}
+.cta .wrap{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:24px}
+.cta .eyebrow{justify-content:center}
+.cta h2{color:var(--cream);font-size:clamp(2.4rem,6vw,5rem);max-width:16ch;line-height:.98}
+.cta h2 .serif-it{color:var(--gold)}
+.cta .ph{font-family:var(--ff-display);font-size:clamp(1.6rem,3.4vw,2.6rem);color:var(--cream);letter-spacing:.01em}
+.cta-btns{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:8px}
+.cta .meta{display:flex;flex-wrap:wrap;gap:8px 28px;justify-content:center;margin-top:30px;color:rgba(246,239,224,.78);font-size:.92rem}
+.cta .meta span{display:inline-flex;align-items:center;gap:.6ch}
+.cta .meta b{color:var(--gold);font-weight:600}
+
+/* ============ FOOTER ============ */
+footer{background:var(--green-darker);color:rgba(246,239,224,.7);padding-block:56px 30px}
+.foot-grid{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;align-items:flex-start}
+.foot-brand .brand{margin-bottom:14px}
+.foot-brand p{max-width:32ch;font-size:.95rem}
+.foot-cols{display:flex;gap:64px;flex-wrap:wrap}
+.foot-col h5{font-family:var(--ff-body);font-size:.74rem;text-transform:uppercase;letter-spacing:.22em;color:var(--gold);margin-bottom:14px;font-weight:600}
+.foot-col a,.foot-col p{display:block;font-size:.95rem;color:rgba(246,239,224,.78);margin-bottom:9px;transition:color .3s}
+.foot-col a:hover{color:var(--cream)}
+.foot-bottom{margin-top:48px;padding-top:22px;border-top:1px solid rgba(246,239,224,.13);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.83rem;color:rgba(246,239,224,.55)}
+.foot-bottom .heart{color:var(--gold)}
+
+/* ============ SCROLL REVEAL ============ */
+.r{opacity:0;transform:translateY(34px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.r.in{opacity:1;transform:none}
+.r.d1{transition-delay:.08s}.r.d2{transition-delay:.16s}.r.d3{transition-delay:.24s}.r.d4{transition-delay:.32s}
+
+/* ============ RESPONSIVE ============ */
+@media(max-width:980px){
+  .hero-grid{grid-template-columns:1fr}.hero-side{display:none}
+  .intro-grid,.proof-grid,.about-grid{grid-template-columns:1fr}
+  .intro-fig{max-width:440px;margin-inline:auto;order:-1}
+  .about figure{max-width:480px;margin-inline:auto}
+  .steps{grid-template-columns:1fr 1fr}
+  .pillar,.pillar:nth-child(even){grid-template-columns:64px 1fr;}
+  .pillar figure,.pillar:nth-child(even) figure{display:none}
+  .pillar:nth-child(even) .num{order:0;text-align:left}
+  .bubble.q{align-self:flex-start}
+}
+@media(max-width:680px){
+  .navlinks{
+    position:fixed;inset:0 0 0 auto;width:min(78vw,320px);
+    background:var(--green-deep);flex-direction:column;justify-content:center;
+    padding:40px;gap:26px;transform:translateX(100%);transition:transform .5s var(--ease);
+    box-shadow:-20px 0 60px -20px rgba(0,0,0,.5);
+  }
+  .navlinks.open{transform:none}
+  .navlinks a{font-size:1.2rem}
+  .navlinks .btn{font-size:1rem}
+  .burger{display:flex}
+  .menu-grid{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr}
+  .hero h1{font-size:clamp(2.7rem,13vw,4.4rem)}
+  .cta .meta{flex-direction:column;gap:8px}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:.001s!important;transition-duration:.001s!important}
+  .marquee-track{animation:none}
+  .r{opacity:1;transform:none}
+}
+
+/* ============ LANG TOGGLE + NAV RIGHT ============ */
+.nav-right{display:flex;align-items:center;gap:18px}
+.langtoggle{
+  display:inline-flex;align-items:center;
+  border:1.5px solid rgba(246,239,224,.45);border-radius:999px;
+  padding:3px;background:rgba(10,42,29,.35);backdrop-filter:blur(6px);
+  font-family:var(--ff-body);flex:0 0 auto;
+}
+.langtoggle button{
+  border:0;cursor:pointer;background:transparent;color:rgba(246,239,224,.8);
+  font-size:.8rem;font-weight:700;letter-spacing:.06em;
+  padding:.42em .9em;border-radius:999px;line-height:1;
+  transition:background .3s var(--ease),color .3s var(--ease);
+}
+.langtoggle button:hover{color:var(--cream)}
+.langtoggle button.active{background:var(--gold);color:var(--green-darker)}
+header.solid .langtoggle{border-color:rgba(246,239,224,.3)}
+
+/* ============ BIGGER LOGO ON DESKTOP (main page) ============ */
+@media(min-width:981px){
+  .nav .brand{font-size:2.7rem}
+  header.solid .nav .brand{font-size:2.15rem}
+  header{transition:background .5s var(--ease),box-shadow .5s var(--ease),padding .5s var(--ease)}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<header id="hd">
+  <nav class="wrap nav">
+    <a href="#top" class="brand"><span class="la">la</span><b>Creperia</b></a>
+    <div class="nav-right">
+      <div class="navlinks" id="menu">
+        <a href="#sabor" data-i18n="nav.flavors">Flavors</a>
+        <a href="#como" data-i18n="nav.how">How it works</a>
+        <a href="#eventos" data-i18n="nav.events">Events</a>
+        <a href="#contato" data-i18n="nav.contact">Contact</a>
+        <a class="btn btn--gold wa" href="#" target="_blank" rel="noopener" data-i18n="nav.quote">Get a quote <span class="arr">↗</span></a>
+      </div>
+      <div class="langtoggle" role="group" aria-label="Language">
+        <button type="button" data-lang="en">EN</button>
+        <button type="button" data-lang="pt">PT</button>
+      </div>
+      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="top">
+  <video id="hv" autoplay muted loop playsinline webkit-playsinline="true" preload="auto" disablepictureinpicture poster="assets/hf_20260608_193746_9ec26411-dda3-448b-85d4-d8ba878d386f.webp">
+    <source src="assets/hf_20260608_194140_4a0e6d02-6327-4844-86f1-c429026e3b2a.mp4" type="video/mp4">
+  </video>
+  <div class="veil"></div>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow hero-eye reveal-up" style="animation-delay:.15s" data-i18n="hero.eye">Live French crêpes · Boca Raton, FL</span>
+        <h1>
+          <span class="reveal-up" style="animation-delay:.3s;display:block" data-i18n="hero.h1a">Share</span>
+          <span class="reveal-up" style="animation-delay:.45s;display:block" data-i18n="hero.h1b">moments,</span>
+          <span class="reveal-up serif-it" style="animation-delay:.6s;display:block" data-i18n="hero.h1c">share flavor.</span>
+        </h1>
+        <p class="hero-sub reveal-up" style="animation-delay:.78s" data-i18n="hero.sub">From breakfast to dinner, the choice is yours. We bring the crêpe station to your event and make everything fresh, right in front of your guests.</p>
+        <div class="hero-cta reveal-up" style="animation-delay:.92s">
+          <a class="btn btn--gold wa" href="#" target="_blank" rel="noopener" data-i18n="hero.cta">Get your free quote <span class="arr">↗</span></a>
+          <span class="hand" style="color:rgba(246,239,224,.85);font-size:1.45rem" data-i18n="hero.note">Neire replies fast 💛</span>
+        </div>
+      </div>
+      <div class="hero-side reveal-up" style="animation-delay:1s" data-i18n="hero.side">Crêpe buffet<span class="dots"></span></div>
+    </div>
+  </div>
+  <div class="scrollcue"><span class="dot"></span><span data-i18n="hero.scroll">scroll to explore</span></div>
+</section>
+
+<!-- ===== MARQUEE ===== -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track" id="mq">
+    <span data-i18n="mq.1">fresh ingredients</span><span data-i18n="mq.2">made to order</span><span data-i18n="mq.3">sweet &amp; savory</span><span data-i18n="mq.4">in front of your guests</span><span data-i18n="mq.5">local products</span><span data-i18n="mq.6">breakfast to dinner</span>
+    <span data-i18n="mq.1">fresh ingredients</span><span data-i18n="mq.2">made to order</span><span data-i18n="mq.3">sweet &amp; savory</span><span data-i18n="mq.4">in front of your guests</span><span data-i18n="mq.5">local products</span><span data-i18n="mq.6">breakfast to dinner</span>
+  </div>
+</div>
+
+<!-- ===== INTRO ===== -->
+<section class="intro pad">
+  <div class="wrap intro-grid">
+    <div>
+      <span class="eyebrow r" data-i18n="intro.eye">An unforgettable taste</span>
+      <h2 class="r d1" data-i18n="intro.h2">Every party gets <span class="serif-it">better</span> with a crêpe made right in front of you.</h2>
+      <p class="lead r d2" data-i18n="intro.lead"><span class="dropcap">T</span>urn your event into a real experience. Our menu follows the seasons, bringing the best of the local products available — simple, beloved classics, prepared with excellence. You choose, we make it on the spot, and the aroma takes over the room.</p>
+      <p class="intro-sign r d3" data-i18n="intro.sign">book your buffet now</p>
+    </div>
+    <div class="intro-fig r d2">
+      <img src="assets/hf_20260608_193756_770a13b8-a204-4ac0-898c-04acf984e40a.webp" alt="Crepe francês com morango, chantilly e açúcar de confeiteiro" loading="lazy">
+      <span class="tag" data-i18n="intro.tag">made fresh ✦</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PILLARS ===== -->
+<section class="pillars pad on-dark" id="porque">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <span class="eyebrow r" data-i18n="pil.eye">Why La Creperia</span>
+        <h2 class="r d1" data-i18n="pil.h2">Three things we <span class="serif-it">never compromise on.</span></h2>
+      </div>
+      <span class="dots r d2" style="width:160px"></span>
+    </div>
+
+    <div class="pillar r">
+      <span class="num">01</span>
+      <div class="ptxt">
+        <h3 data-i18n="pil1.h3">Fresh ingredients</h3>
+        <p data-i18n="pil1.p">Our menu follows the seasons, bringing the best of the local products available. No old tubs sitting in the fridge — everything is bought and prepared for your day.</p>
+      </div>
+      <figure><img src="assets/hf_20260608_193803_2428ead4-1b5d-46fc-a842-1245035db7a2.webp" alt="Tigelas de recheios frescos na estação de crepe" loading="lazy"></figure>
+    </div>
+
+    <div class="pillar r">
+      <span class="num">02</span>
+      <div class="ptxt">
+        <h3 data-i18n="pil2.h3">Comfort food</h3>
+        <p data-i18n="pil2.p">We keep the simple, beloved classics on the menu — but prepared with excellence. Our flavors stand out, guaranteed. It is that cozy taste everyone recognizes.</p>
+      </div>
+      <figure><img src="assets/hf_20260608_193809_ed42d778-35f6-4e81-b816-ca2a73d8d858.webp" alt="Crepe salgado de presunto e queijo" loading="lazy"></figure>
+    </div>
+
+    <div class="pillar r">
+      <span class="num">03</span>
+      <div class="ptxt">
+        <h3 data-i18n="pil3.h3">Interactive experience</h3>
+        <p data-i18n="pil3.p">Crêpes are made on the spot, in front of your guests, who pick their favorite fillings — sweet and savory. It creates a fun, one-of-a-kind moment people talk about afterward.</p>
+      </div>
+      <figure><img src="assets/hf_20260608_193819_fafd6120-abbc-4922-9087-1a0f6d9a4dd9.webp" alt="Mãos do chef dobrando um crepe na chapa, ao vivo" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SABORES ===== -->
+<section class="sabores pad" id="sabor">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow r" style="justify-content:center" data-i18n="sab.eye">The menu</span>
+      <h2 class="r d1" data-i18n="sab.h2">Sweet <span class="serif-it">&amp;</span> savory</h2>
+      <span class="dots r d2"></span>
+    </div>
+    <div class="menu-grid">
+      <article class="menu-card salgado r d1">
+        <div class="pic"><span class="label" data-i18n="sab.savlabel">Savory</span><img src="assets/hf_20260608_193809_ed42d778-35f6-4e81-b816-ca2a73d8d858.webp" alt="Crepe salgado com queijo derretido e presunto" loading="lazy"></div>
+        <div class="menu-body">
+          <h3 data-i18n="sab.savh3">To start hungry</h3>
+          <ul class="menu-list">
+            <li><b data-i18n="sav1.n">Ham &amp; cheese</b><span class="leader"></span><span class="desc" data-i18n="sav1.d">the classic that never fails</span></li>
+            <li><b data-i18n="sav2.n">Shrimp &amp; cheese</b><span class="leader"></span><span class="desc" data-i18n="sav2.d">the house favorite</span></li>
+            <li><b data-i18n="sav3.n">Creamy chicken</b><span class="leader"></span><span class="desc" data-i18n="sav3.d">seasoned our way</span></li>
+            <li><b data-i18n="sav4.n">Cheese &amp; fresh herbs</b><span class="leader"></span><span class="desc" data-i18n="sav4.d">simple and perfect</span></li>
+            <li><b data-i18n="sav5.n">Seasonal vegetarian</b><span class="leader"></span><span class="desc" data-i18n="sav5.d">whatever is best that day</span></li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="menu-card doce r d2">
+        <div class="pic"><span class="label" data-i18n="sab.dlabel">Sweet</span><img src="assets/hf_20260608_193814_5549016d-62ff-4523-8d3d-a5f9d9df4e87.webp" alt="Crepe doce de Nutella com banana e morango" loading="lazy"></div>
+        <div class="menu-body">
+          <h3 data-i18n="sab.dh3">To finish happy</h3>
+          <ul class="menu-list">
+            <li><b data-i18n="swt1.n">Nutella &amp; banana</b><span class="leader"></span><span class="desc" data-i18n="swt1.d">the number-one order</span></li>
+            <li><b data-i18n="swt2.n">Strawberry &amp; whipped cream</b><span class="leader"></span><span class="desc" data-i18n="swt2.d">with powdered sugar</span></li>
+            <li><b data-i18n="swt3.n">Dulce de leche</b><span class="leader"></span><span class="desc" data-i18n="swt3.d">the Brazilian way</span></li>
+            <li><b data-i18n="swt4.n">Chocolate &amp; fruit</b><span class="leader"></span><span class="desc" data-i18n="swt4.d">in season</span></li>
+            <li><b data-i18n="swt5.n">Sugar &amp; cinnamon</b><span class="leader"></span><span class="desc" data-i18n="swt5.d">the simplest and most loved</span></li>
+          </ul>
+        </div>
+      </article>
+    </div>
+    <p class="menu-note r" data-i18n="sab.note">Menu tailored to the season and your event — we build it together with you.</p>
+  </div>
+</section>
+
+<!-- ===== COMO FUNCIONA ===== -->
+<section class="how pad" id="como">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow r" data-i18n="how.eye">How it works</span>
+      <h2 class="r d1" data-i18n="how.h2">The station arrives <span class="serif-it">fully set up</span> at your event.</h2>
+    </div>
+    <div class="steps">
+      <div class="step r d1"><div class="bar"></div><h4 data-i18n="step1.h">Tell us about it</h4><p data-i18n="step1.p">Date, place, and how many guests. Send a message and Neire takes care of the rest.</p></div>
+      <div class="step r d2"><div class="bar"></div><h4 data-i18n="step2.h">We set it all up</h4><p data-i18n="step2.p">We arrive early and assemble the full station: the griddle, fresh fillings, and all the decor.</p></div>
+      <div class="step r d3"><div class="bar"></div><h4 data-i18n="step3.h">Made on the spot</h4><p data-i18n="step3.p">The crêpes come out hot, in front of your guests, with the filling each one picks.</p></div>
+      <div class="step r d4"><div class="bar"></div><h4 data-i18n="step4.h">You just enjoy</h4><p data-i18n="step4.p">No dishes, no mess for you. The party is yours — the work is ours.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== EVENTOS ===== -->
+<section class="events pad" id="eventos">
+  <div class="bg"><img src="assets/hf_20260608_193825_ce991166-7583-4780-8404-61ebe86060f7.webp" alt="Festa ao ar livre com estação de crepe e luzes" loading="lazy"></div>
+  <div class="wrap">
+    <span class="eyebrow r" style="justify-content:center" data-i18n="ev.eye">For every occasion</span>
+    <h2 class="r d1" data-i18n="ev.h2">If people are gathered, <span class="serif-it">there is crêpe.</span></h2>
+    <p class="sub r d2" data-i18n="ev.sub">From breakfast to dinner, the choice is yours. We have done a bit of everything — and we love a new challenge.</p>
+    <div class="chips r d2">
+      <span class="chip" data-i18n="chip1">Birthdays</span>
+      <span class="chip" data-i18n="chip2">Weddings</span>
+      <span class="chip" data-i18n="chip3">Baby showers</span>
+      <span class="chip" data-i18n="chip4">Corporate events</span>
+      <span class="chip" data-i18n="chip5">Breakfast</span>
+      <span class="chip" data-i18n="chip6">Brunch</span>
+      <span class="chip" data-i18n="chip7">Graduations</span>
+      <span class="chip" data-i18n="chip8">House parties</span>
+      <span class="chip" data-i18n="chip9">Get-togethers</span>
+    </div>
+    <a class="btn btn--gold r d3 wa" href="#" target="_blank" rel="noopener" style="margin-top:14px" data-i18n="ev.cta">I want it for my event <span class="arr">↗</span></a>
+  </div>
+</section>
+
+<!-- ===== DEPOIMENTO ===== -->
+<section class="proof pad">
+  <div class="wrap proof-grid">
+    <div>
+      <span class="eyebrow r" data-i18n="pf.eye">Taste it, come back</span>
+      <h2 class="r d1" data-i18n="pf.h2">Look what <span class="serif-it">lands</span> in our WhatsApp.</h2>
+      <p class="sub r d2" data-i18n="pf.sub">The greatest joy is getting a message from a client after the party. This one is real, word for word:</p>
+      <div class="src r d3"><span class="dots"></span> <span data-i18n="pf.src">real message from a client</span></div>
+    </div>
+    <div class="bubble-wrap r d2">
+      <div class="bubble q" data-i18n="pf.q">Hi Neire, all good? 😊</div>
+      <div class="bubble">
+        <span data-i18n="pf.msg">Thank you so much for everything, the food was wonderful, everyone complimented it a lot. You can be sure that whatever I can do for you, I will — count on me, because it was more than we expected. I loved getting to know your work</span>
+        <span class="meta"><span data-i18n="pf.client">La Creperia client</span> · WhatsApp <span class="check">✓✓</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== QUEM SOMOS ===== -->
+<section class="about pad">
+  <div class="wrap about-grid">
+    <figure class="r">
+      <img src="assets/hf_20260608_193819_fafd6120-abbc-4922-9087-1a0f6d9a4dd9.webp" alt="A estação de crepe sendo preparada na hora">
+      <figcaption data-i18n="ab.cap">made with love</figcaption>
+    </figure>
+    <div>
+      <span class="eyebrow r" data-i18n="ab.eye">The story</span>
+      <h2 class="r d1" data-i18n="ab.h2">Good food is the <span class="serif-it">excuse</span> to bring everyone together.</h2>
+      <p class="r d2" data-i18n="ab.p1">La Creperia was born from that love: we are a Brazilian family here in South Florida bringing real French crêpes to the region's parties. Everything made on the spot, with fresh product and the care of people who cook for those they love.</p>
+      <p class="r d2" data-i18n="ab.p2">The one keeping an eye on every detail — from the first "hi" on WhatsApp to the last crêpe of the night — is Neire, up close.</p>
+      <div class="who r d3" data-i18n="ab.who">— Neire &amp; the La Creperia team</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta pad" id="contato">
+  <div class="glow"></div>
+  <div class="wrap">
+    <span class="eyebrow r" data-i18n="cta.eye">Shall we book it?</span>
+    <h2 class="r d1" data-i18n="cta.h2">Let's plan your <span class="serif-it">party.</span></h2>
+    <p class="ph r d2">+1 (754) 326-9853</p>
+    <div class="cta-btns r d2">
+      <a class="btn btn--gold wa" href="#" target="_blank" rel="noopener" data-i18n="cta.wa">Message Neire on WhatsApp <span class="arr">↗</span></a>
+      <a class="btn btn--ghost" href="https://www.instagram.com/la_creperia_usa/" target="_blank" rel="noopener">@la_creperia_usa <span class="arr">↗</span></a>
+    </div>
+    <div class="meta r d3">
+      <span data-i18n="cta.m1">📍 <b>Boca Raton, FL</b> — we serve all of South Florida</span>
+      <span data-i18n="cta.m2">🗓️ <b>By appointment</b> — events every day</span>
+      <span data-i18n="cta.m3">☀️ <b>From breakfast to dinner</b></span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="#top" class="brand"><span class="la">la</span><b>Creperia</b></a>
+        <p data-i18n="ft.tag">The best French crêpes for you and your guests. Share moments, share flavor.</p>
+        <span class="dots" style="margin-top:16px;width:140px;display:block"></span>
+      </div>
+      <div class="foot-cols">
+        <div class="foot-col">
+          <h5 data-i18n="ft.nav">Navigate</h5>
+          <a href="#sabor" data-i18n="nav.flavors">Flavors</a>
+          <a href="#como" data-i18n="nav.how">How it works</a>
+          <a href="#eventos" data-i18n="nav.events">Events</a>
+          <a href="#contato" data-i18n="nav.contact">Contact</a>
+        </div>
+        <div class="foot-col">
+          <h5 data-i18n="ft.contact">Contact</h5>
+          <a class="wa" href="#" target="_blank" rel="noopener">WhatsApp · +1 (754) 326-9853</a>
+          <a href="https://www.instagram.com/la_creperia_usa/" target="_blank" rel="noopener">Instagram · @la_creperia_usa</a>
+          <p data-i18n="ft.loc">Boca Raton, FL · South Florida</p>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="yr"></span> La Creperia · Boca Raton, FL</span>
+      <span data-i18n="ft.made">Made with <span class="heart">💛</span> in Boca Raton</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* year */
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+/* iOS-robust hero video: force muted inline autoplay, retry on first gesture */
+(function(){
+  var v = document.getElementById('hv');
+  if(!v) return;
+  v.muted = true; v.setAttribute('muted','');
+  v.playsInline = true;
+  var tryPlay = function(){ var p = v.play(); if(p && p.catch) p.catch(function(){}); };
+  tryPlay();
+  var once = function(){ tryPlay(); ['touchstart','click','scroll'].forEach(function(e){window.removeEventListener(e,once);}); };
+  ['touchstart','click','scroll'].forEach(function(e){window.addEventListener(e,once,{passive:true,once:true});});
+})();
+
+/* sticky header */
+const hd = document.getElementById('hd');
+const onScroll = () => hd.classList.toggle('solid', window.scrollY > 40);
+onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+
+/* mobile menu */
+const burger = document.getElementById('burger');
+const menu = document.getElementById('menu');
+burger.addEventListener('click', () => menu.classList.toggle('open'));
+menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.remove('open')));
+
+/* scroll reveal */
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+}, {threshold:.16, rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.r, .step').forEach(el => io.observe(el));
+
+/* duplicate marquee if needed for seamless loop on very wide screens */
+
+/* ===== i18n: English default, EN/PT toggle, persisted ===== */
+(function(){
+  var PT = {"nav.flavors": "Sabores", "nav.how": "Como funciona", "nav.events": "Eventos", "nav.contact": "Contato", "nav.quote": "Orçamento <span class=\"arr\">↗</span>", "hero.eye": "Crepe francês ao vivo · Boca Raton, FL", "hero.h1a": "Compartilhe", "hero.h1b": "momentos,", "hero.h1c": "compartilhe sabor.", "hero.sub": "Do café da manhã ao jantar, a escolha é sua. A gente leva a estação de crepe pro seu evento e prepara tudo na hora, na frente dos convidados.", "hero.cta": "Faça já o seu orçamento <span class=\"arr\">↗</span>", "hero.note": "a Neire responde rapidinho 💛", "hero.side": "Buffet de crepe<span class=\"dots\"></span>", "hero.scroll": "role para descer", "mq.1": "ingredientes frescos", "mq.2": "feito na hora", "mq.3": "doce &amp; salgado", "mq.4": "na frente dos convidados", "mq.5": "produtos locais", "mq.6": "do café ao jantar", "intro.eye": "Um sabor inesquecível", "intro.h2": "Cada festa fica <span class=\"serif-it\">melhor</span> com um crepe feito na sua frente.", "intro.lead": "<span class=\"dropcap\">T</span>ransforme seu evento numa experiência de verdade. Nosso cardápio acompanha as estações, trazendo o melhor dos produtos locais disponíveis — clássicos simples e queridinhos, mas preparados com excelência. Você escolhe, a gente faz na hora, e o cheirinho toma conta da sala.", "intro.sign": "reserve já o seu buffet", "intro.tag": "feito na hora ✦", "pil.eye": "Por que a La Creperia", "pil.h2": "Três coisas que a gente <span class=\"serif-it\">não abre mão.</span>", "pil1.h3": "Ingredientes frescos", "pil1.p": "Nosso cardápio acompanha as estações, trazendo o melhor dos produtos locais disponíveis. Nada de pote velho na geladeira — é tudo comprado e preparado para o seu dia.", "pil2.h3": "Comida que conforta", "pil2.p": "Temos os clássicos simples e queridinhos no cardápio — mas preparados com excelência. Nossos sabores se destacam, garantido. É aquele gostinho de aconchego que todo mundo reconhece.", "pil3.h3": "Experiência interativa", "pil3.p": "Os crepes são preparados na hora, na frente dos convidados, que escolhem seus recheios preferidos — doces e salgados. Isso cria um momento divertido e único, daqueles que a galera comenta depois.", "sab.eye": "O cardápio", "sab.h2": "Doce <span class=\"serif-it\">&amp;</span> salgado", "sab.savlabel": "Salgado", "sab.savh3": "Para começar com fome", "sav1": null, "sav1.n": "Presunto &amp; queijo", "sav1.d": "o clássico que nunca falha", "sav2": null, "sav2.n": "Camarão com queijo", "sav2.d": "o queridinho da casa", "sav3": null, "sav3.n": "Frango cremoso", "sav3.d": "temperado do nosso jeito", "sav4": null, "sav4.n": "Queijo &amp; ervas frescas", "sav4.d": "simples e perfeito", "sav5": null, "sav5.n": "Vegetariano da estação", "sav5.d": "o que tiver de melhor no dia", "sab.dlabel": "Doce", "sab.dh3": "Para terminar feliz", "swt1": null, "swt1.n": "Nutella &amp; banana", "swt1.d": "pedido número um", "swt2": null, "swt2.n": "Morango &amp; chantilly", "swt2.d": "com açúcar de confeiteiro", "swt3": null, "swt3.n": "Doce de leite", "swt3.d": "do jeito brasileiro", "swt4": null, "swt4.n": "Chocolate &amp; frutas", "swt4.d": "da estação", "swt5": null, "swt5.n": "Açúcar &amp; canela", "swt5.d": "o mais simples e amado", "sab.note": "Cardápio personalizado conforme a estação e o seu evento — a gente monta junto com você.", "how.eye": "Como funciona", "how.h2": "A estação chega <span class=\"serif-it\">montada</span> no seu evento.", "step1": null, "step1.h": "Conta pra gente", "step1.p": "Data, lugar e quantos convidados. Mande uma mensagem que a Neire cuida do resto.", "step2": null, "step2.h": "Montamos tudo", "step2.p": "Chegamos antes e armamos a estação completa: chapa, recheios fresquinhos e toda a decoração.", "step3": null, "step3.h": "Feito na hora", "step3.p": "Os crepes saem quentinhos, na frente dos convidados, com o recheio que cada um escolher.", "step4": null, "step4.h": "Você só curte", "step4.p": "Nada de louça nem bagunça pra você. A festa é sua — o trabalho é nosso.", "ev.eye": "Para toda ocasião", "ev.h2": "Se tem gente reunida, <span class=\"serif-it\">tem crepe.</span>", "ev.sub": "Do café da manhã ao jantar, a escolha é sua. A gente já fez de tudo um pouco — e adora um desafio novo.", "chip1": "Aniversários", "chip2": "Casamentos", "chip3": "Chá de bebê", "chip4": "Eventos corporativos", "chip5": "Café da manhã", "chip6": "Brunch", "chip7": "Formaturas", "chip8": "Festas em casa", "chip9": "Confraternizações", "ev.cta": "Quero pro meu evento <span class=\"arr\">↗</span>", "pf.eye": "Quem prova, volta", "pf.h2": "Olha o que <span class=\"serif-it\">chega</span> no nosso WhatsApp.", "pf.sub": "A maior alegria é receber mensagem de cliente depois da festa. Essa é de verdade, palavra por palavra:", "pf.src": "mensagem real de uma cliente", "pf.q": "Neire tudo bem? 😊", "pf.msg": "Muito obrigada por tudo a comida estava ótima todos elogiaram muito, pode ter certeza que o que eu puder fazer por você sou fazer conte comigo pois foi mais do que nós esperávamos amei conhecer o seu trabalho", "pf.client": "Cliente La Creperia", "ab.eye": "A história", "ab.h2": "Comida boa é a <span class=\"serif-it\">desculpa</span> pra juntar todo mundo.", "ab.cap": "feito com carinho", "ab.p1": "A La Creperia nasceu desse amor: a gente é uma família brasileira aqui no Sul da Flórida levando o crepe francês de verdade pras festas da região. Tudo feito na hora, com produto fresco e aquele cuidado de quem cozinha pra quem gosta.", "ab.p2": "Quem fica de olho em cada detalhe — do primeiro \"oi\" no WhatsApp até o último crepe da noite — é a Neire, de pertinho.", "ab.who": "— Neire &amp; equipe La Creperia", "cta.eye": "Vamos marcar?", "cta.h2": "Bora montar a sua <span class=\"serif-it\">festa.</span>", "cta.wa": "Falar com a Neire no WhatsApp <span class=\"arr\">↗</span>", "cta.m1": "📍 <b>Boca Raton, FL</b> — atendemos todo o Sul da Flórida", "cta.m2": "🗓️ <b>Sob agendamento</b> — eventos todos os dias", "cta.m3": "☀️ <b>Do café ao jantar</b>", "ft.tag": "O melhor crepe francês para você e seus convidados. Compartilhe momentos, compartilhe sabor.", "ft.nav": "Navegar", "ft.contact": "Contato", "ft.loc": "Boca Raton, FL · Sul da Flórida", "ft.made": "Feito com <span class=\"heart\">💛</span> em Boca Raton"};
+  var META = {
+    en:{ title:"La Creperia · Live French Crêpes at Your Event — Boca Raton, FL",
+         desc:"A live French crêpe buffet made fresh in front of your guests. Sweet and savory, fresh ingredients. We serve parties and events in Boca Raton and across South Florida.",
+         lang:"en" },
+    pt:{ title:"La Creperia · Crepe francês ao vivo no seu evento — Boca Raton, FL",
+         desc:"Buffet de crepe francês feito na hora, na frente dos seus convidados. Doce e salgado, ingredientes frescos. Atendemos festas e eventos em Boca Raton e todo o Sul da Flórida.",
+         lang:"pt-BR" }
+  };
+  var WA = {
+    en:"https://api.whatsapp.com/send?phone=+17543269853&text="+encodeURIComponent("Hi! I was on your website and would like a quote, please."),
+    pt:"https://api.whatsapp.com/send?phone=+17543269853&text="+encodeURIComponent("Olá! Eu estava no site de vocês e gostaria de um orçamento, por favor.")
+  };
+  var els = document.querySelectorAll('[data-i18n]');
+  var EN = {};            // cache English from the DOM (default render)
+  els.forEach(function(el){ EN[el.dataset.i18n] = el.innerHTML; });
+
+  var btns = document.querySelectorAll('.langtoggle button');
+  var descTag = document.querySelector('meta[name="description"]');
+
+  function apply(lang){
+    var src = (lang === 'pt') ? PT : EN;
+    els.forEach(function(el){
+      var k = el.dataset.i18n;
+      var v = (src[k] != null) ? src[k] : EN[k];
+      if(v != null) el.innerHTML = v;
+    });
+    document.documentElement.lang = META[lang].lang;
+    document.title = META[lang].title;
+    if(descTag) descTag.setAttribute('content', META[lang].desc);
+    document.querySelectorAll('a.wa').forEach(function(a){ a.href = WA[lang]; });
+    btns.forEach(function(b){ b.classList.toggle('active', b.dataset.lang === lang); });
+    try{ localStorage.setItem('lacrep_lang', lang); }catch(e){}
+  }
+
+  var saved = 'en';
+  try{ saved = localStorage.getItem('lacrep_lang') || 'en'; }catch(e){}
+  apply(saved);
+
+  btns.forEach(function(b){
+    b.addEventListener('click', function(){ apply(b.dataset.lang); });
+  });
+})();
+</script>
+</body>
+</html>
